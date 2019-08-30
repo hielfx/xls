@@ -48,7 +48,7 @@ func OpenReader(reader io.ReadSeeker, charset string) (wb *WorkBook, err error) 
 					root = file
 				}
 			}
-			if book != nil {
+			if book != nil && root != nil {
 				wb = newWorkBookFromOle2(ole.OpenFile(book, root))
 				return
 			}
